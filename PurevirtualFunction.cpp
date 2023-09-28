@@ -18,18 +18,35 @@ class Rectangle:public Shape
             return (x*y);
          }
     };
-class triangle:public Shape
+class Triangle:public Shape
     {
         public:
         float area(float x,float y)
         {
               return 0.5*x*y;
         }
-    };    
+    };
+    Shape * choice()
+    {
+        int c;
+        cout<<"Enter your choice"<<endl;
+        cout<<"Enter 1:Rectangle"<<endl;
+        cout<<"Enter 2:Triangle"<<endl;
+        cin>>c;
+        if(c==1)
+        {
+            return new Rectangle;
+        }
+        else
+        {
+          return new Triangle;
+        }    
+        
+    }    
 int main()
 {
     Shape *p;
-    p=new Rectangle;
+    p=choice();
     cout<<"Area = "<<p->area(2,3)<<endl;
     return 0;
 }
