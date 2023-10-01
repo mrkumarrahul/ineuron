@@ -41,6 +41,13 @@ class Triangle:public Shape
             return 3.14*x*y;
         }
     };
+    class Rhombus:public Shape{
+        public:
+        float area(float x,float y)
+        {
+            return x*y;
+        }
+    };
     Shape * choice()
     {
         int c;
@@ -48,8 +55,8 @@ class Triangle:public Shape
         cout<<"Enter 1:Rectangle"<<endl;
         cout<<"Enter 2:Triangle"<<endl;
         cout<<"Enter 3:circle" <<endl;
-        cout<<"Enter 4:square"<<endl;
-        
+        cout<<"Enter 4:Rhombus"<<endl;
+        cout<<"Enter 5:square"<<endl;
         cin>>c;
         if(c==1)
         {
@@ -62,6 +69,10 @@ class Triangle:public Shape
         else if(c==3)
         {
             return new circle;
+        }
+        else if(c==4)
+        {
+            return new Rhombus;
         }
         else
         {
