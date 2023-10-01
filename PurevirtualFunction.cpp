@@ -34,13 +34,22 @@ class Triangle:public Shape
         return x*y;
       }
     };
+    class circle:public Shape{
+        public:
+        float area(float x,float y)
+        {
+            return 3.14*x*y;
+        }
+    };
     Shape * choice()
     {
         int c;
         cout<<"Enter your choice"<<endl;
         cout<<"Enter 1:Rectangle"<<endl;
         cout<<"Enter 2:Triangle"<<endl;
-        cout<<"Enter 3:square"<<endl;
+        cout<<"Enter 3:circle" <<endl;
+        cout<<"Enter 4:square"<<endl;
+        
         cin>>c;
         if(c==1)
         {
@@ -50,6 +59,10 @@ class Triangle:public Shape
         {
           return new Triangle;
         }  
+        else if(c==3)
+        {
+            return new circle;
+        }
         else
         {
             return new square;
