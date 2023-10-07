@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .circle {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Function to create a circle at the specified coordinates
+        function createCircle(x, y) {
+            // Create a new div element for the circle
+            var circle = document.createElement("div");
+            circle.className = "circle";
+
+            // Set the position of the circle
+            circle.style.left = (x - 25) + "px"; // Subtract half the width
+            circle.style.top = (y - 25) + "px";  // Subtract half the height
+
+            // Add the circle to the body of the document
+            document.body.appendChild(circle);
+        }
+
+        // Event listener for mouse click
+        document.addEventListener("click", function(event) {
+            // Get the mouse coordinates where the click occurred
+            var x = event.clientX;
+            var y = event.clientY;
+
+            // Create a circle at the clicked coordinates
+            createCircle(x, y);
+        });
+    </script>
+</body>
+</html>
